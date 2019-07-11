@@ -1,5 +1,5 @@
 <%-- 
-    Document   : brands
+    Document   : instruments
     Created on : Jul 5, 2019, 12:08:35 PM
     Author     : thanosparaskevas
 --%>
@@ -14,7 +14,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Brands</title>
+        <title>Instruments</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.1.6/css/uikit.min.css" />
          <link href="<c:url value='/static/css/app.css' />" rel="stylesheet"></link>
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
@@ -23,7 +23,7 @@
         
         <script type="text/javascript">
             $(document).ready(function () {
-                $('#brands').DataTable();
+                $('#instruments').DataTable();
             });
         </script>
 
@@ -31,12 +31,12 @@
     <body>
         <div class="uk-section uk-section-medium uk-section-muted ">
             <div class="uk-container uk-container-expand">
-                <h2 class=" uk-padding-small uk-text-center">Brands</h2>
+                <h2 class=" uk-padding-small uk-text-center">Instruments</h2>
                 <span class="green" uk-icon="user">Admin</span>
 
-                <a class="uk-button uk-button-primary" href="<c:url value='/addBrand' />">Add New </a>
+                <a class="uk-button uk-button-primary" href="<c:url value='/addInstrument' />">Add New </a>
                 <!--        <p> </p>-->
-                <table id="brands" class="uk-table uk-table-hover uk-table-divider">
+                <table id="instruments" class="uk-table uk-table-hover uk-table-divider">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -50,14 +50,16 @@
                     <tbody>
                         <c:forEach items="${list}" var="tr">
                             <tr>
-                                <td>${brand.id}</td>
-                                <td>${brand.name}</td>
-                                <td>${brand.info}</td>
-
-                                <td><a href="<c:url value='/edit/${brand.id}' />" class="uk-button uk-button-default 
+                                <td>${instrument.id}</td>
+                                <td>${instrument.model}</td>
+                                <td>${instrument.price}</td>
+                                <td>${instrument.brand}</td>
+                                <td>${instrument.description}</td>
+                                <td>${instrument.type}</td>
+                                <td><a href="<c:url value='/edit/${instrument.id}' />" class="uk-button uk-button-default 
 
                                        custom-width">edit</a></td>
-                                <td><a href="<c:url value='/delete/${brand.id}' />" class="uk-button uk-button-danger	 
+                                <td><a href="<c:url value='/delete/${instrument.id}' />" class="uk-button uk-button-danger	 
 
                                        custom-width">delete</a></td>
                             </tr>

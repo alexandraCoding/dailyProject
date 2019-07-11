@@ -58,7 +58,7 @@
                                 </div>
                             </div>
                             <div class="uk-margin">
-                                <label class="uk-form-label" for="form-horizontal-text">Surname*</label>
+                                <label class="uk-form-label" for="form-horizontal-text">Info*</label>
                                 <div class="uk-form-controls">
                                     <form:input type="text" path="info" id="info" class="uk-input" required="required" />
 
